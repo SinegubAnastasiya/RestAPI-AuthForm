@@ -1,0 +1,21 @@
+{
+  "name": "restapi-authform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index",
+    "format": "prettier --write .",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.56.0",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2",
+    "pg": "^8.11.3",
+    "prettier": "^3.2.4"
+  }
+}
