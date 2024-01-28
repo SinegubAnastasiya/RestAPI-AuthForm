@@ -8,7 +8,19 @@ const {
   getUserByEmailDB,
 } = require('../repository/repository');
 
+async function createUser(username, email, phone, pwd) {
+  const foundEmail = await getUserByEmailDB(email);
+  if (foundEmail.length) throw new Error('Such user has already existed');
+  const user = await createUserDB(username, email, phone, pwd);
+  return user;
+}
 
+async function authUser(email, pwd) {
+  const foundEmail = await getUserByEmailDB(email);
+  if (!foundEmail.length) throw new Error('Such user does not exist');
+  if (foundEmail[0]?.pwd != pwd) throw new Error('Invalid password');
+  return foundEmail;
+}
 
 async function getAllUsers() {
   const data = await getAllUsersDB();
