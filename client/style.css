@@ -1,0 +1,11 @@
+div {
+    width: max-content;
+    margin: auto;
+}
+
+div input {
+    display: block;
+    width: 300px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
