@@ -6,5 +6,14 @@ btn.addEventListener('click', async () => {
     const phone = document.querySelector('.phone').value
     const pwd = document.querySelector('.pwd').value
 
-    const response = await fetch ()
+    const response = await fetch ('http://localhost:3000/user/3', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, email, phone, pwd })
+    })
+
+    const result = await response.json()
+    console.log(result);
 })
